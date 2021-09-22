@@ -6,7 +6,8 @@
         <h2>Editar artigo</h2>
       </div>
       <div class="card-body">
-        <form method="POST" action="/articles/save">
+        <form method="POST" action="/articles/update">
+          <input type="hidden" value="<%= article.id %>" name="id"> 
           <input 
             type="text"
             class="form-control mb-3"
