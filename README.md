@@ -5,7 +5,7 @@
 <br>
 
 ---
-<img src="img\WhatsApp Image 2021-09-16 at 21.04.44.jpeg" />
+<img src="img\WhatsApp Image 2021-09-24 at 22.17.54.jpeg" />
 
 ---
 ## 🌟 Tecnologias 
