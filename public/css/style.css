@@ -19,3 +19,7 @@ body {
 .card-body {
   background: #383737;
 }
+
+tr {
+  color: #ebeeeb;
+}
