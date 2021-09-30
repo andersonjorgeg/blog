@@ -1,0 +1,30 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar.ejs') %>
+
+<div class="container">
+  <div class="card mt-3 col-6">
+    <div class="card-header">
+      <h2>Edição de usuário</h2>
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/users/update">
+        <input 
+          type="email" 
+          class="form-control" 
+          placeholder="editar email" 
+          name="email" 
+        >
+        <input 
+          name="password" 
+          type="password" 
+          class="form-control mt-3" 
+          placeholder="**********"
+        >
+        <input type="hidden" name="id" value="<%= user.id %>">
+        <button class="btn btn-success mt-3">Atualizar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../../partials/footer.ejs') %>
