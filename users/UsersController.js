@@ -30,15 +30,34 @@ router.post('/users/create', (req, res) => {
         email: email,
         password: hash
       }).then(() => {
-        res.redirect('/');
+        res.redirect('/admin/users');
       }).catch(err => {
-        res.redirect('/');
+        res.redirect('/admin/users');
       });
     } else {
       res.redirect('/admin/users/create');
       
     }
   });
+});
+
+router.post('/users/delete', (req, res) => {
+  let id = req.body.id;
+  if(id != undefined){
+
+    if(!isNaN(id)){
+      User.destroy({
+        where: {id: id}
+      }).then(() => {
+        res.redirect('/admin/users')
+      })
+    } else {
+      res.redirect('/admin/users')
+    }
+
+  } else {
+    res.redirect('/admin/users')
+  }
 });
 
 router.get('/admin/users/edit/:id', (req, res) => {

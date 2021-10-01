@@ -26,6 +26,16 @@
 
             <a href="/admin/users/edit/<%= user.id %>" class="btn btn-warning">editar</a>
 
+            <form 
+              action="/users/delete" 
+              method="POST" 
+              style="display:inline;"
+              onsubmit="confirmarDelecao(event, this)"
+            >
+              <input type="hidden" name="id" value="<%= user.id %>">
+              <button class="btn btn-danger">deletar</button>
+            </form>
+
           </td>
 
         </tr>
@@ -36,4 +46,12 @@
 </div>
 
 <%- include('../../partials/footer.ejs') %>
-
+<script>
+  function confirmarDelecao(event, form) {
+    event.preventDefault();
+    let decision = confirm('Você quer deletar esse usuário?');
+    if(decision){
+      form.submit();
+    }
+  }
+</script>
